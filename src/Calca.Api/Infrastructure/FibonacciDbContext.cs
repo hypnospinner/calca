@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Calca.Api.Infrastructure
 {
-    public class FibonacciDbContext : DbContext, ICalculationDbContext
+    public class FibonacciDbContext : DbContext
     {
         public FibonacciDbContext(DbContextOptions<FibonacciDbContext> options) : base(options) { }
         public DbSet<CalculationResult> Results { get; set; }

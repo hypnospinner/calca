@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Configuration;
 
 public static class Extensions
 {
@@ -68,7 +69,7 @@ public static class Extensions
 
         var method = typeof(ServiceCollectionServiceExtensions)
             .GetMethod(
-                "AddTransient",
+                "AddScoped",
                 0,
                 new Type[] {
                     typeof(IServiceCollection),

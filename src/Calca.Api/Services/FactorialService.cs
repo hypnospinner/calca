@@ -16,8 +16,15 @@ namespace Calca.Api.Services
 
         public override Task<FactorialReply> Calculate(FactorialRequest request, ServerCallContext context)
         {
-            // TODO: implement factorial calculation
-            return base.Calculate(request, context);
+            if (request.N < 1)
+                return Task.FromResult(new FactorialReply { Value = (-1).ToString() });
+
+            ulong result = 1;
+
+            for (uint i = 1; i <= request.N; i++)
+                result *= i;    
+
+            return Task.FromResult(new FactorialReply { Value = result.ToString() });
         }
     }
 }

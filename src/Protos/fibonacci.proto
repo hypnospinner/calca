@@ -6,6 +6,8 @@ package fibonacci;
 
 service Fibonacci {
     rpc Calculate (FibonacciRequest) returns (FibonacciReply);
+    // rpc LatestResults (LatestResultsRequest) returns (stream FibonacciCalculationResult);
+    // rpc LatestResultArrayed (LatestResultsRequest) returns (LatestFibonacciCalculationResults);
 }
 
 message FibonacciRequest {
@@ -14,4 +16,17 @@ message FibonacciRequest {
 
 message FibonacciReply {
     string value = 1;
+}
+
+message LatestResultsRequest {
+
+}
+
+message LatestFibonacciCalculationResults {
+    repeated FibonacciCalculationResult results = 1;
+}
+
+message FibonacciCalculationResult {
+    string result = 1;
+    string date = 2;
 }

@@ -25,7 +25,6 @@ namespace Calca.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddInMemoryDbContexts();
-
             services.AddGrpc();
         }
 
