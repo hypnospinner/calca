@@ -43,7 +43,7 @@ namespace Calca.ConsoleClient
                 else Console.WriteLine("Invalid Result Input");
             }
 
-            Console.WriteLine("By");
+            Console.WriteLine("Goodbye");
             Console.ReadLine();
         }
     }
