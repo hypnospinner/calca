@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "Calca.Api.Protos";
+
+package fibonacci;
+
+service Fibonacci {
+    rpc Calculate (FibonacciRequest) returns (FibonacciReply);
+}
+
+message FibonacciRequest {
+    int32 n = 1;
+}
+
+message FibonacciReply {
+    string value = 1;
+}

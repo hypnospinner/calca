@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "Calca.Api.Protos";
+
+package factorial;
+
+service Factorial {
+    rpc Calculate (FactorialRequest) returns (FactorialReply);
+}
+
+message FactorialRequest {
+    int32 n = 1;
+}
+
+message FactorialReply {
+    string value = 1;
+}
